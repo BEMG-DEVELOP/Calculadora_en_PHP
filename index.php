@@ -1,23 +1,30 @@
 <?php
-function suma($valor1,$valor2){
-  $resultado = $valor1 + $valor2;
- print_r("La suma es:".$resultado."<br>") ;
-}
-function resta($valor1,$valor2){
-  $resultado = $valor1 - $valor2;
-  print_r("La resta es:".$resultado."<br>");
-}
-function multiplicacion($valor1,$valor2){
-  $resultado = $valor1 * $valor2;
-  print_r("La multiplicación es:".$resultado."<br>");
-}
-function division($valor1,$valor2){
-  $resultado =  $valor1 / $valor2;
-  print_r("La división es:".$resultado."<br>");
+function calculadora($valor1,$operador,$valor2){
+  switch($operador){
+    case "+":
+      $resultado = $valor1 + $valor2;
+      print_r("El resultado de la suma es: ".$resultado."<br>");
+    break;
+    case "-":
+      $resultado = $valor1 - $valor2;
+      print_r("El resultado de la resta es: ".$resultado."<br>");
+    break;
+    case "*":
+      $resultado = $valor1 * $valor2;
+    print_r("El resultado de la multiplicacion es: ".$resultado."<br>");
+    break;
+    case "/":
+      $resultado = $valor1 / $valor2;
+    print_r("El resultado de la división es: ".$resultado."<br>");
+    break;
+    default:
+    print_r("La operación no es valida");
+    break;
+  }
 }
 
-suma(10,2);
-resta(10,2);
-multiplicacion(10,2);
-division(10,2);
+calculadora(10,"+",2);
+calculadora(10,"-",2);
+calculadora(10,"*",2);
+calculadora(10,"/",2);
 ?>
