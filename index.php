@@ -1,71 +1,33 @@
 <?php
 function busqueda($interes,$caracteristica){
-  $clima = [
+  $clima = array(
     "Bogotá" => "frío",
     "Montería" => "calido",
     "Medellín" => "templado",
-  ];
-  $ubicacion = [
+  );
+  $ubicacion = array(
     "Guajira" => "norte",
     "leticia" => "sur",
     "Santander" => "este",
     "Antioquia" => "oeste"
-  ];
-  $turismo = [
+  );
+  $turismo = array(
     "Santa Marta" => "mar",
     "Villavicencio" => "llano",
     "Riohacha" => "desierto",
     "Quindío" => "valle"
-  ];
+  );
   
   switch($interes){
     case"clima":
-      switch($caracteristica){
-        case"frío":
-          $busqueda = array_search("frío",$clima);
-        break;
-        case"calido":
-          $busqueda = array_search("calido",$clima);
-        break;
-        case "templado":
-          $busqueda = array_search("templado",$clima);
-        break;
-      }
-        print_r("La ciudad que te recomendamos es: ".$busqueda);
+        print_r("La ciudad que te recomendamos es: ".       array_search($caracteristica,$clima));
     break;
     case "ubicacion":
-    switch($caracteristica){
-        case"norte":
-          $busqueda = array_search("norte",$ubicacion);
-        break;
-        case"sur":
-          $busqueda = array_search("sur",$ubicacion);
-        break;
-        case "este":
-          $busqueda = array_search("este",$ubicacion);
-        break;
-        case "oeste":
-          $busqueda = array_search("oeste",$ubicacion);
-        break;
-    }
-      print_r("La ciudad que te recomendamos es: ".$busqueda);
+    
+      print_r("La ciudad que te recomendamos es: ".array_search($caracteristica,$ubicacion));
     break;
     case "turismo":
-    switch($caracteristica){
-        case"mar":
-          $busqueda = array_search("mar",$turismo);
-        break;
-        case"llano":
-          $busqueda = array_search("llano",$turismo);
-        break;
-        case "desierto":
-          $busqueda = array_search("desierto",$turismo);
-        break;
-        case "valle":
-          $busqueda = array_search("valle",$turismo);
-        break;
-    }
-      print_r("La ciudad que te recomendamos es: ".$busqueda);
+      print_r("La ciudad que te recomendamos es: ".array_search($caracteristica,$turismo));
     break;
   }
 }
